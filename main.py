@@ -1,10 +1,10 @@
-import csv
 import requests
-import words
 
-words = words.words
+f = open('nerdwords', 'r')
+words = f.read().split()
 
 available = []
+
 def plateChecker(plate):
     base_url = 'https://services.dps.ohio.gov/BMVOnlineServices/VR/Availability/Passenger/GetAvailability?vehicleClass=&newPlate={0}&organizationCode=0'.format(plate)
 
@@ -16,8 +16,6 @@ def plateChecker(plate):
         print('License Plate [NOT AVAILABLE]: {0} unavailable'.format(plate))
 
 for word in words:
-    #print(word)
     plateChecker(word)
 
 print(available)
-
