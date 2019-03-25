@@ -3,8 +3,6 @@ import requests
 f = open('nerdwords', 'r')
 words = f.read().split('\n')
 
-available = []
-
 def plateChecker(plate):
     base_url = 'https://services.dps.ohio.gov/BMVOnlineServices/VR/Availability/Passenger/GetAvailability?vehicleClass=&newPlate={0}&organizationCode=0'.format(plate)
 
@@ -18,4 +16,3 @@ def plateChecker(plate):
 for word in words:
     plateChecker(word)
 
-print(available)
