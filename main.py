@@ -1,7 +1,7 @@
 import requests
 
 f = open('nerdwords', 'r')
-words = f.read().split()
+words = f.read().split('\n')
 
 available = []
 
